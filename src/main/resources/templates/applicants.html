@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org " xmlns:sec="www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Application status</title>
+	<th:block th:replace="base :: head"></th:block>
+    
+</head>
+<body class="profile-page">
+<th:block th:replace="base :: nav"></th:block>
+<div class="wrapper">
+	<div class="header header-filter" style="background-image: url('../assets/img/examples/city.jpg');"></div>
+	<div class="main main-raised">
+		
+			
+		<table class="table table-hover">
+			<tr>
+				<th>User name</th>
+				
+				<th>Status</th>
+			</tr>
+			<tr th:each="usercamp : ${applicants}">
+				
+				<td> <th:block sec:authorize="hasAuthority('ADMIN')">
+						<a th:href="@{'/applicant/' + ${usercamp.user.id} + '/' + ${usercamp.camp.campId}}" th:text="${usercamp.user.fullName}"></a>
+				</th:block>
+
+				<th:block sec:authorize="hasAuthority('SUPER')">
+					<p th:text="${usercamp.user.fullName}"></p>
+				</th:block>
+
+				</td>
+					<td th:text="${usercamp.status}"></td>
+
+					<td> <a th:href="@{'/email2/' + ${usercamp.user.id}}" th:text="'Send ' + ${usercamp.user.fullName} + ' an email.'"></a></td>
+			</tr>
+			
+		</table>
+	</div>
+</div>
+</body>
+</html>

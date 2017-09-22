@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+
+    <th:block th:replace="base :: head"></th:block>
+    <title>Bootstrap Finder</title>
+</head>
+<body>
+<body class="signup-page">
+<th:block th:replace="base :: nav"></th:block>
+<div class="wrapper">
+    <div class="header header-filter" style="background-image: url('../assets/img/city.jpg'); background-size: cover; background-position: top center;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8  col-sm-6 col-sm-offset-2">
+                    <div class="card card-signup">
+    <form autocomplete = "off" th:action="@{/registeruser}" th:object="${user}" method="post">
+        <div class="header header-primary text-center">
+            <h4>Register</h4>
+        </div>
+        <div class="content">
+            <div class="input-group" th:class="(${#fields.hasErrors('username')}) ? 'form-group label-floating has-error': 'form-group'" >
+                <span th:if="${#fields.hasErrors('username')}" th:errors="*{username}">username Error</span>
+                <input type="text" name="username" id = "username" class="form-control" th:field="*{username}" placeholder="username"/>
+            </div>
+
+            <div class="input-group" th:class="(${#fields.hasErrors('email')}) ? 'form-group label-floating has-error': 'form-group'">
+                <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</span>
+                <input type="email" name="email" id="email" class="form-control" th:field="*{email}" placeholder="email"/>
+            </div>
+
+            <div class="input-group" th:class="(${#fields.hasErrors('password')}) ? 'form-group label-floating has-error': 'form-group'">
+                <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</span>
+                <input type="password" name="password" id="password" class="form-control" th:field="*{password}" placeholder="password"/>
+            </div>
+
+
+            <div class="input-group" th:class="(${#fields.hasErrors('fullName')}) ? 'form-group label-floating has-error': 'form-group'">
+                <span th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}">Name Error</span>
+                <input type="text" name="name" id="name" class="form-control" th:field="*{fullName}" placeholder="full name"/>
+            </div>
+
+            <div class="input-group" th:class="(${#fields.hasErrors('aboutMe')}) ? 'form-group label-floating has-error': 'form-group'">
+                <span th:if="${#fields.hasErrors('aboutMe')}" th:errors="*{aboutMe}">Name Error</span>
+                <input type="text" name="aboutMe" id="aboutMe" class="form-control input-lg" th:field="*{aboutMe}" placeholder="Tell us about yourself"/>
+            </div>
+
+            <div class="input-group">
+                <label>Select City (select one):</label>
+                <select class="form-control" data-style="form-control" data-width="25%" title = "Choose City" th:name = "cityId">
+                    <th:block th:each="city: ${cityList}">
+                        <option th:value="${city.id}" th:text = "${city.city}">cityname</option>
+                    </th:block>
+                </select>
+            </div>
+
+            <div class="input-group">
+            <label for="role">Select Role (select one):</label>
+                <select class="form-control" data-style="form-control" id="role" data-width="25%" th:name = "role" title = "Choose Account Type">
+                    <option value="USER">User</option>
+                    <option value="ADMIN">Admin</option>
+                </select>
+
+            </div>
+
+
+
+
+
+
+        <!--<span th:if="${#fields.hasErrors('authority')}" th:errors="*{authority}">Error</span>-->
+        <br/>
+        <br/>
+        <div class= "col-md-3">
+            <button type="submit" class="btn btn-round btn-info" value="Sign Up">Sign Up</button>
+        </div>
+        </div>
+    </form>
+                    </div>
+</div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+<div th:replace="base :: footlinks"></div>
+</body>
+</html>

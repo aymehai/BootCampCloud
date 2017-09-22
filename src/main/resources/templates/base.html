@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="thymeleaf.org " xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head th:fragment="head">
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png"/>
+    <link rel="icon" type="image/png" href="assets/img/favicon.png"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>BootFinder</title>
+
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+
+    <!-- CSS Files -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/css/material-kit.css" rel="stylesheet"/>
+
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="/assets/css/demo.css" rel="stylesheet" />
+</head>
+<body>
+<nav class="navbar navbar-transparent navbar-fixed-top navbar-color-on-scroll">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-index">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navigation-index"  th:fragment="nav" >
+            <ul class="nav navbar-nav navbar-right">
+
+                <li><a href="/login" sec:authorize="isAnonymous()">Login</a></li>
+                <li><a href="/logout" sec:authorize="isAuthenticated()">Logout</a></li>
+                <li><a href="/registeruser" sec:authorize="isAnonymous()">Register</a></li>
+                <li><a href="/searchCamps" sec:authorize="isAuthenticated()">Search Camps</a></li>
+                <li><a href="/campLists" sec:authorize="isAuthenticated()">View All Camps</a></li>
+                <li><a href="/" sec:authorize="isAuthenticated()">Home</a></li>
+                <li><a href="/createcamp" sec:authorize="hasAuthority('ADMIN')">Create a Camp</a></li>
+                <li><a href="/admincamps" sec:authorize="hasAuthority('ADMIN')">My Camps</a></li>
+                <li><a href="/myapplication" sec:authorize="hasAuthority('USER')">My Applications</a></li>
+                <li><a href="/enable" sec:authorize="hasAuthority('SUPER')">View and Enable/Disable Camps</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</body>
+<!--   Core JS Files   -->
+<div th:fragment="footlinks">
+    <script src="assets/js/jquery.min.js" type="text/javascript"></script>
+    <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="assets/js/material.min.js"></script>
+
+    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="assets/js/nouislider.min.js" type="text/javascript"></script>
+
+    <!--  Plugin for the Datepicker, full documentation here: http://www.eyecon.ro/bootstrap-datepicker/ -->
+    <script src="assets/js/bootstrap-datepicker.js" type="text/javascript"></script>
+
+    <!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
+    <script src="assets/js/material-kit.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        $().ready(function(){
+            // the body of this function is in assets/material-kit.js
+            materialKit.initSliders();
+            window_width = $(window).width();
+
+            if (window_width >= 992){
+                big_image = $('.wrapper > .header');
+
+                $(window).on('scroll', materialKitDemo.checkScrollForParallax);
+            }
+
+        });
+    </script>
+</div>
+</html>
+
