@@ -1,118 +1,87 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="www.thymeleaf.org " xmlns:sec="www.thymeleaf.org/extras/spring-security">
+<html lang="en" xmlns:th="www.thymeleaf.org "
+	xmlns:sec="www.thymeleaf.org/extras/spring-security">
 <th:block th:replace="base :: head"></th:block>
 <body class="landing-page">
-<th:block th:replace="base :: nav"></th:block>
-<div class="wrapper">
-    <div class="header header-filter" style="background-image: url('https://static.pexels.com/photos/507181/pexels-photo-507181.jpeg'); background-size: cover; background-position: top center;">
+	<th:block th:replace="base :: nav"></th:block>
+	<div class="wrapper">
+		<div class="header header-filter"
+			style="background-image: url('https://newevolutiondesigns.com/images/freebies/city-wallpaper-47.jpg'); background-size: cover; background-position: top center;">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<h1 class="title">BootFinder</h1>
+						<h4>There are now over 100 programming bootcamps in the
+							United States. This application allows people to use a single
+							application to apply to all member bootcamps.</h4>
+						<br />
+					</div>
+				</div>
+			</div>
+		</div>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h1 class="title">BootFinder</h1>
-                    <h4>There are now over 100 programming bootcamps in the United States. This application allows people to use a single application to apply to all member bootcamps.</h4>
-                    <br />
-                </div>
-            </div>
-        </div>
-    </div>
+		<div class="main main-raised">
+			<div class="container">
+				<div class="section text-center section-landing">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2">
+							<h2 class="title">What Can You Do?</h2>
+							<h5 class="description">Find the right programming bootcamp
+								for you. With this application you can jumpstart a career in
+								programming!</h5>
+						</div>
+					</div>
 
-    <div class="main main-raised">
-        <div class="container">
-            <div class="section text-center section-landing">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h2 class="title">What Can You Do?</h2>
-                        <h5 class="description">Find the right programming bootcamp for you. With this application you can jumpstart a career in programming!</h5>
-                    </div>
-                </div>
+					<div class="features">
+						<div class="row">
+							<div class="col-md-6">
+								<div class="info">
+									<div class="icon icon-primary">
+										<i class="material-icons">chat</i>
+									</div>
+									<h4 class="info-title">Search through the camps in your
+										area</h4>
+									<p>Find out what bootcamps are near you so that you don't
+										have to travel far from home.</p>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="info">
+									<div class="icon icon-success">
+										<i class="material-icons">verified_user</i>
+									</div>
+									<h4 class="info-title">Submit one application</h4>
+									<p>Save time by creating only one application that can be
+										sent out to multiple bootcamps.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-                <div class="features">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="info">
-                                <div class="icon icon-primary">
-                                    <i class="material-icons">chat</i>
-                                </div>
-                                <h4 class="info-title">Search through the camps in your area</h4>
-                                <p>Find out what bootcamps are near you so that you don't have to travel far from home.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="info">
-                                <div class="icon icon-success">
-                                    <i class="material-icons">verified_user</i>
-                                </div>
-                                <h4 class="info-title">Submit one application</h4>
-                                <p>Safe time by creating only one application that can be sent out to multiple bootcamps.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section text-center">
-                <h2 class="title">Here is our team</h2>
-
-                <div class="team">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="team-player">
-                                <img src="../assets/img/hs_Aymen_Mehai.jpg" alt="Thumbnail Image" class="img-raised img-circle"/>
-                                <h4 class="title">Aymen Mehai <br />
-                                    <small class="text-muted">Developer</small>
-                                </h4>
-
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="team-player">
-                                <img src="https://pbs.twimg.com/profile_images/859461085555982340/xBeHkh-v.jpg" alt="Thumbnail Image" class="img-raised img-circle"/>
-                                <h4 class="title">Daylin Henry <br />
-                                    <small class="text-muted">Developer</small>
-                                </h4>
-                                </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="team-player">
-                                <img src="../assets/img/Robert_Gross.jpg" alt="Thumbnail Image" class="img-raised img-circle"/>
-                                <h4 class="title">Robert Gross<br />
-                                    <small class="text-muted">Developer</small>
-                                </h4>
-                                  </div>
-                        </div>
-
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="team-player">
-                                <img src="../assets/img/hs_Rediet_Ayalew.jpg" alt="Thumbnail Image" class="img-raised img-circle"/>
-                                <h4 class="title">Reideit Ayalew<br />
-                                    <small class="text-muted">Developer</small>
-                                </h4>
-                                 </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="team-player">
-                                <img src="../assets/img/hs_Kevin_Chu.jpg" alt="Thumbnail Image" class="img-raised img-circle"/>
-                                <h4 class="title">Kevin Chu<br />
-                                    <small class="text-muted">Developer</small>
-                                </h4>
-                                      </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+				<div class="section text-center">
+					<h2 class="title">Here is our team</h2>
+					<div class="team">
+						<div class="row">
+							<div class="team-player">
+								<img src="../assets/img/hs_Aymen_Mehai.jpg"
+									alt="Thumbnail Image" class="img-raised img-circle" />
+								<h4 class="title">
+									Aymen Mehai <br /> <small class="text-muted">Lead Developer</small>
+								</h4>
+							</div>
+						</div>
+					</div>
+				</div>
 
 
 
 
-        </div>
+			</div>
 
-    </div>
+		</div>
 
 
-</div>
+	</div>
 </body>
 </html>
