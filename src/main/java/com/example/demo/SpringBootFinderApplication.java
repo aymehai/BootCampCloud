@@ -10,7 +10,7 @@ import it.ozimov.springboot.mail.configuration.EnableEmailTools;
 
 @SpringBootApplication
 @EnableEmailTools
-@ComponentScan(basePackageClasses = MasterController.class)
+@ComponentScan(basePackages={"com.example.demo.controllers"})
 public class SpringBootFinderApplication {
 
 	public static void main(String[] args) {
